@@ -1,12 +1,9 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+### Project ‘Hive’ ###
 
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Contemporary Peer-to-Peer Social Engagement
+* Version 0.0
 
 ### How do I get set up? ###
 
@@ -27,3 +24,4 @@ This README would normally document whatever steps are necessary to get your app
 
 * Repo owner or admin
 * Other community or team contact
+  
