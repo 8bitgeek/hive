@@ -4,11 +4,11 @@
 
 # Node 1:
 
-`./test1.py`
+`./test1-node1.py`
 
 # Node 2:
 
-`./test.py`
+`./test1-node2.py`
 
 # Expected Output:
 
