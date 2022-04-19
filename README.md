@@ -8,11 +8,21 @@
 ### How do I get set up? ###
 
 * Summary of set up
+  - `git clone https://github.com/8bitgeek/hive.git`
+  - `cd hive`
+  - `git submodules init`
+  - `git submodules update`
 * Configuration
+  - See [src/setup/README.md](src/setup/README.md)
 * Dependencies
+  - Python 3
 * Database configuration
 * How to run tests
+  * See [src/test/README.md](src/test/README.md)
 * Deployment instructions
+  - Linux: `./install.sh`
+  - Windows: N/A
+  - Android: N/A
 
 ### Contribution guidelines ###
 
