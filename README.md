@@ -12,7 +12,7 @@ _  __  / _  / __ |/ //  __/
 * Version 0.0 (Work in Process)
 * Linux-only during early development phase
 
-### Technology Preview (In Process) ###
+### Technology Preview ###
 
 * [docs/hive-slides.odp](https://github.com/8bitgeek/hive/blob/master/docs/hive-slides.odp?raw=true)
 
