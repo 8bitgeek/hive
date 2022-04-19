@@ -14,7 +14,7 @@ _  __  / _  / __ |/ //  __/
 
 ### Technology Preview (In Process) ###
 
-* [docs/hive-slides.odp](https://github.com/8bitgeek/hive/blob/master/slides/hive-p2p.odp?raw=true)
+* [docs/hive-slides.odp](https://github.com/8bitgeek/hive/blob/master/docs/hive-p2p.odp?raw=true)
 
 ### How do I get set up? ###
 
