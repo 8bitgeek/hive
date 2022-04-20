@@ -6,3 +6,8 @@ Contains classes which are used to establish and maintain the outer peer-to-peer
 
 Uses p2pnetwork.node, p2pnetwork.nodeconnection
 
+## AStar.py
+
+Contains A* search Algorithm base class. 
+
+
