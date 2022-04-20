@@ -60,8 +60,10 @@ class AStar:
                 for y_offs in range(-1,2):
                     y_link=y+y_offs
                     if y_link>=0:
-                        links.append(self.grid[x_link][y_link])
-        return [link for link in links if link.value != '%']
+                        link = self.grid[x_link][y_link]
+                        if link.value != '%':
+                            links.append(link)
+        return links
     
     def search(self,start, goal):
         openset = set()

@@ -36,25 +36,19 @@ sys.path.append("../../../bin")
 from AStar import AStar
 
 grid = []
-grid.append(list('..%.'))
-grid.append(list('..%.'))
-grid.append(list('%...'))
-grid.append(list('....'))
-grid.append(list('....'))
+grid.append(list('..%.%'))
+grid.append(list('.%.%.'))
+grid.append(list('.%.%.'))
+grid.append(list('%.%..'))
+grid.append(list('..%..'))
 
 astart=AStar(grid)
 
-
-
 inputA='0 0'
 inputB='3 3'
-inputXY='2 2'
 
 nodeA_x, nodeA_y = [ int(i) for i in inputA.split() ]
 nodeB_x, nodeB_y = [ int(i) for i in inputB.split() ]
-x,y = [ int(i) for i in inputXY.split() ]
-
-
 
 path=astart.solve((nodeA_x, nodeA_y),(nodeB_x, nodeB_y))
 
