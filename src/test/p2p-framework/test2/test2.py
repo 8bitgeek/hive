@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/python3
 # ______  ______             
 # ___  / / /__(_)__   ______ 
 # __  /_/ /__  /__ | / /  _ \
@@ -27,9 +27,39 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 # IN THE SOFTWARE.
 #
-if [ "$PIP" == "" ]; then
-    PIP=pip3
-fi
-$PIP install p2pnetwork
-$PIP install ipfs-api
-$PIP install blowfish
+import sys
+import time
+
+# common imports location
+sys.path.append("../../../bin")
+
+from AStar import AStar
+
+grid = []
+grid.append(list('..%.'))
+grid.append(list('..%.'))
+grid.append(list('%...'))
+grid.append(list('....'))
+grid.append(list('....'))
+
+astart=AStar(grid)
+
+
+
+inputA='0 0'
+inputB='3 3'
+inputXY='2 2'
+
+nodeA_x, nodeA_y = [ int(i) for i in inputA.split() ]
+nodeB_x, nodeB_y = [ int(i) for i in inputB.split() ]
+x,y = [ int(i) for i in inputXY.split() ]
+
+
+
+path=astart.solve((nodeA_x, nodeA_y),(nodeB_x, nodeB_y))
+
+# Output the path
+print(len(path) - 1)
+for node in path:
+    x, y = node.point
+    print(x, y)

@@ -12,11 +12,11 @@ _  __  / _  / __ |/ //  __/
 * Version 0.0 (Work in Process)
 * Linux-only during early development phase
 
-### Technology Preview ###
+### Technology Preview
 
 * [docs/hive-slides.odp](https://github.com/8bitgeek/hive/blob/master/docs/hive-slides.odp?raw=true)
 
-### How do I get set up? ###
+### How do I get set up?
 
 * Summary of set up
   - `git clone https://github.com/8bitgeek/hive.git`
@@ -36,14 +36,14 @@ _  __  / _  / __ |/ //  __/
   - Windows: N/A
   - Android: N/A
 
-### Contribution guidelines ###
+### Contribution guidelines
 
 * Writing tests
 * Code review
 * Other guidelines
 
-### Who do I talk to? ###
+### Who do I talk to?
 
 * Repo owner or admin
 * Other community or team contact
-  
+
