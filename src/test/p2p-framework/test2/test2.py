@@ -46,7 +46,7 @@ grid.append(list('.%.%.'))
 grid.append(list('%.%..'))
 grid.append(list('..%..'))
 
-astart=AStar(grid)
+astar=AStar(grid)
 
 inputA='0 0'    # Origin (x,y)
 inputB='3 3'    # Destination (x,y)
@@ -54,7 +54,7 @@ inputB='3 3'    # Destination (x,y)
 nodeA_x, nodeA_y = [ int(i) for i in inputA.split() ]
 nodeB_x, nodeB_y = [ int(i) for i in inputB.split() ]
 
-path=astart.solve((nodeA_x, nodeA_y),(nodeB_x, nodeB_y))
+path=astar.solve((nodeA_x, nodeA_y),(nodeB_x, nodeB_y))
 
 # dump the path list coords
 print(len(path) - 1)
