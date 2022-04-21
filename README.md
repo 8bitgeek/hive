@@ -14,7 +14,8 @@ _  __  / _  / __ |/ //  __/
 
 ### Technology Preview
 
-* [docs/hive-slides.odp](https://github.com/8bitgeek/hive/blob/master/docs/hive-slides.odp?raw=true)
+* Technical Preview Slides [docs/hive-slides.odp](https://github.com/8bitgeek/hive/blob/master/docs/hive-slides.odp?raw=true)
+* Technical Specification [docs/techspec.md](docs/techspec.md)
 
 ### How do I get set up?
 
