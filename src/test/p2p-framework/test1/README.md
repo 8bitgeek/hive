@@ -1,6 +1,6 @@
 # Basic outer P2P functional test.
 
-# Requires two nodes.
+Requires two nodes to run on localhost. Make a TCB connection with one another, send a message 'Hi There!', and then disconnect.
 
 # Node 1:
 
