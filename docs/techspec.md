@@ -1,8 +1,8 @@
-## Draft
+## *** Draft ***
 
 ## Overview
 
-A peer-to-peer (P2P) social media platforms, and distributed, redundant media storage (like IPFS) are going to be essential to free and open exchange of knowledge and ideas on the internet.
+A peer-to-peer (P2P) social media platforms, and distributed, redundant media storage (like IPFS) are going to become more essential to the free and open exchange of knowledge and ideas on the internet.
 
 A P2P network is the sum of the participants at any given moment, it is dynamic, ever changing shape and size, making it a difficult target for a would be attacker.
 
