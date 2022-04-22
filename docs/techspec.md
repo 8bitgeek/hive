@@ -1,12 +1,24 @@
-## Draft Template
+## Draft
 
-## Overview, Problem Description, Summary, or Abstract
+## Overview
 
-    Summary of the problem (from the perspective of the user), the context, suggested solution, and the stakeholders.
+    A solid peer-to-peer (P2P) social media platforms, and distributed, redundant media storage (like IPFS) are going to be essential to free and open exchange of knowledge and ideas on the internet.
+
+    A P2P network is the sum of the participants at any given moment, it is dynamic, ever changing shape and size, making it a difficult target for a would be attacker.
 
 ## Glossary  of Terminology
 
-    New terms you come across as you research your design or terms you may suspect your readers/stakeholders not to know. 
+    * peer-to-peer: relating to, using, or being a network by which computers operated by individuals  can share information and resources directly without relying on a dedicated central server.
+    * For most of our purposes, we will use the term “peer” and “node” interchangeably.
+    * Routing: guiding and directing network data between nodes from a source node to a destination node.
+    * Routing Table: A table of known possible destinations used to help guide network traffic between a source node and a destination node.
+    * Routing algorithm: A collection of formula and methods used to optimally calculate a path from a source node to a destination node over which to route traffic.
+    * A* : (Pronounced “Ay Star”) is a path search algorithm, which is under consideration to use at the core of the ‘Hive’ routing algorithm.
+    * Unstructured Peer-to-Peer topology: Define
+    * Structured Peer-to-Peer topology: Define
+    * Tunnelling: Define
+    * Plugin: Define
+    * Distributed file-system: Define
 
 ## Context or Background
 
