@@ -9,7 +9,8 @@ _  __  / _  / __ |/ //  __/
 ```
 
 * Contemporary Peer-to-Peer Social Engagement
-* Robust social engagement, anti-censorship, open source.
+* Secure private communications and transactions
+* Robust social engagement, anti-censorship, open source
 * Version 0.0 (Work in Process)
 * Linux-only during early development phase
 
