@@ -27,6 +27,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 # IN THE SOFTWARE.
 #
+import sys
 import blowfish
 from os import urandom
 
@@ -42,5 +43,7 @@ data_decrypted = b"".join(cipher.decrypt_cbc_cts(data_encrypted, iv))
 
 if ( data == data_decrypted ):
     print('PASS')
+    sys.exit(0)
 else:
     print('FAIL')
+    sys.exit(255)

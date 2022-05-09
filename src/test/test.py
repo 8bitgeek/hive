@@ -26,24 +26,28 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 # IN THE SOFTWARE.
-#
-import sys
-import blowfish
-from os import urandom
-from operator import xor
+import os
 
-key=b"Key must be between 4 and 56 bytes long."
+test_no=2
 
-cipher = blowfish.Cipher(key)
+def test_path(folder):
+    return folder+'/test'+str(test_no)
 
-data = urandom(10 * 8) # data to encrypt
+def test_script():
+    return './test'+str(test_no)+'.py'
 
-data_encrypted = b"".join(cipher.encrypt_ecb(data))
-data_decrypted = b"".join(cipher.decrypt_ecb(data_encrypted))
+print(test_path('p2p-framework'))
 
-if ( data == data_decrypted ):
-    print('PASS')
-    sys.exit(0)
-else:
-    print('FAIL')
-    sys.exit(255)
+
+
+while os.path.exists(test_path('p2p-framework')) and os.path.isdir(test_path('p2p-framework')):
+    print(test_path('p2p-framework'))
+    cwd = os.getcwd()
+    os.chdir(test_path('p2p-framework'))
+    result=os.system(test_script())
+    
+    print(result)
+    os.chdir(cwd)
+    test_no+=1
+
+

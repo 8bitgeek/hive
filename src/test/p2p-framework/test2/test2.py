@@ -33,7 +33,7 @@ import time
 # common imports location
 sys.path.append("../../../bin")
 
-from AStar import AStar
+from HiveAStar import HiveAStar
 
 #
 # '.' is available
@@ -46,7 +46,7 @@ grid.append(list('.%.%.'))
 grid.append(list('%.%..'))
 grid.append(list('..%..'))
 
-astar=AStar(grid)
+astar=HiveAStar(grid)
 
 inputA='0 0'    # Origin (x,y)
 inputB='3 3'    # Destination (x,y)

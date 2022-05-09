@@ -27,6 +27,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 # IN THE SOFTWARE.
 #
+import sys
 import blowfish
 from os import urandom
 import binascii
@@ -43,6 +44,8 @@ plaintext = cipher.decrypt_block(ciphertext)
 
 if ( block == plaintext ):
     print('PASS')
+    sys.exit(0)
 else:
     print('FAIL')
+    sys.exit(255)
     

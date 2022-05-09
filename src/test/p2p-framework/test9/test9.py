@@ -27,6 +27,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 # IN THE SOFTWARE.
 #
+import sys
 import blowfish
 from os import urandom
 from operator import xor
@@ -45,5 +46,7 @@ data_decrypted = b"".join(cipher.decrypt_ctr(data_encrypted, dec_counter))
 
 if ( data == data_decrypted ):
     print('PASS')
+    sys.exit(0)
 else:
     print('FAIL')
+    sys.exit(255)
