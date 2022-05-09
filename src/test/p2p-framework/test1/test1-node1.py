@@ -33,9 +33,9 @@ import time
 # common imports location
 sys.path.append("../../../bin")
 
-from OuterPeer2PeerNode import OuterPeer2PeerNode
+from HiveOuterNode import HiveOuterNode
 
-node = OuterPeer2PeerNode("127.0.0.1", 10001)
+node = HiveOuterNode("127.0.0.1", 10001)
 time.sleep(1)
 
 # Do not forget to start your node!

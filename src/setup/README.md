@@ -7,9 +7,12 @@ cd src/setup
 ./setup.sh
 ```
 
-## Windows
+## Windows (cygwin or so)
 
-N/A at this time
+```
+cd src/setup
+./setup.sh
+```
 
 ## Android: 
 

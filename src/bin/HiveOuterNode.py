@@ -37,18 +37,18 @@ from p2pnetwork.nodeconnection import NodeConnection
 # own NodeConnection class you can do this. Make sure that you override 
 # create_new_connection(self, connection, id, host, port) in the class 
 # Node, to make sure you initiate your own NodeConnection class
-class OuterNodeConnection (NodeConnection):
+class HiveOuterNodeConnection (NodeConnection):
     # Python class constructor
      def __init__(self, main_node, sock, id, host, port):
-        super(OuterNodeConnection, self).__init__(main_node, sock, id, host, port)
+        super(HiveOuterNodeConnection, self).__init__(main_node, sock, id, host, port)
 
     # Check yourself what you would like to change and override! See the 
     # documentation and code of the nodeconnection class.
 
-class OuterPeer2PeerNode (Node):
+class HiveOuterNode (Node):
     # Python class constructor
     def __init__(self, host, port, id=None, callback=None, max_connections=0):
-        super(OuterPeer2PeerNode, self).__init__(host, port, id, callback, max_connections)
+        super(HiveOuterNode, self).__init__(host, port, id, callback, max_connections)
 
     def outbound_node_connected(self, connected_node):
         print("outbound_node_connected: " + connected_node.id)
@@ -76,4 +76,4 @@ class OuterPeer2PeerNode (Node):
     # override this method! In this method, you can initiate
     # you own NodeConnection class.
     def create_new_connection(self, connection, id, host, port):
-        return OuterNodeConnection(self, connection, id, host, port)
+        return HiveOuterNodeConnection(self, connection, id, host, port)

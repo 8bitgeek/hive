@@ -41,7 +41,7 @@ class AStarNode:
         return 0 if self.value == '.' else 1
 
 
-class AStar:
+class HiveAStar:
     def __init__(self,grid):
         self.grid = grid
         self.path = []
@@ -113,7 +113,7 @@ class AStar:
         return []
 
     def solve(self,nodeA,nodeB):
-        # Convert all the points to instances of AStar
+        # Convert all the points to instances of HiveAStar
         for x in range(len(self.grid)):
             for y in range(len(self.grid[x])):
                 self.grid[x][y] = AStarNode(self.grid[x][y],(x,y))
