@@ -26,28 +26,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 # IN THE SOFTWARE.
-import os
+#
+import sys
 
-test_no=2
-
-def test_path(folder):
-    return folder+'/test'+str(test_no)
-
-def test_script():
-    return './test.py'
-
-print(test_path('p2p-framework'))
-
-
-
-while os.path.exists(test_path('p2p-framework')) and os.path.isdir(test_path('p2p-framework')):
-    print(test_path('p2p-framework'))
-    cwd = os.getcwd()
-    os.chdir(test_path('p2p-framework'))
-    result=os.system(test_script())
+sys.exit(255)
     
-    print(result)
-    os.chdir(cwd)
-    test_no+=1
-
-
