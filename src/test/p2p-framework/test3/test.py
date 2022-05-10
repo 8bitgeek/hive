@@ -43,9 +43,7 @@ plaintext = cipher.decrypt_block(ciphertext)
 
 
 if ( block == plaintext ):
-    print('PASS')
     sys.exit(0)
 else:
-    print('FAIL')
     sys.exit(255)
     

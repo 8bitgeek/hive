@@ -42,8 +42,6 @@ data_encrypted = b"".join(cipher.encrypt_ofb(data, iv))
 data_decrypted = b"".join(cipher.decrypt_ofb(data_encrypted, iv))
 
 if ( data == data_decrypted ):
-    print('PASS')
     sys.exit(0)
 else:
-    print('FAIL')
     sys.exit(255)

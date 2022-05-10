@@ -42,8 +42,6 @@ data_encrypted = b"".join(cipher.encrypt_ecb_cts(data))
 data_decrypted = b"".join(cipher.decrypt_ecb_cts(data_encrypted))
 
 if ( data == data_decrypted ):
-    print('PASS')
     sys.exxit(0)
 else:
-    print('FAIL')
     sys.exit(255)

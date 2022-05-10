@@ -45,8 +45,6 @@ data_encrypted = b"".join(cipher.encrypt_ctr(data, enc_counter))
 data_decrypted = b"".join(cipher.decrypt_ctr(data_encrypted, dec_counter))
 
 if ( data == data_decrypted ):
-    print('PASS')
     sys.exit(0)
 else:
-    print('FAIL')
     sys.exit(255)

@@ -28,26 +28,39 @@
 # IN THE SOFTWARE.
 import os
 
-test_no=2
+# given a folder, return the full 
+# path to what would be the test script
+def test_script_path(folder):
+    script_path = folder+'/'+'test.py'
+    return script_path
 
-def test_path(folder):
-    return folder+'/test'+str(test_no)
+# return true of the folder is a 
+# test script folder
+def is_test_path(folder):
+    return os.path.isfile(test_script_path(folder))
 
-def test_script():
-    return './test.py'
+# run a test
+def run_test(path):
+    if ( is_test_path(path) ):
+        status='PASS'
+        result=os.system(test_script_path(path))
+        if result!=0:
+            status='FAIL('+str(result)+')'
+        print(status+' '+path)
 
-print(test_path('p2p-framework'))
+# itterate the test folders and 
+# run each test
+def run_unit_tests(path):
+    dir_list = os.listdir(path)
+    for dir_entry in dir_list:
+        test_path=path+'/'+dir_entry
+        run_test(test_path)
 
+# itterate the frameworks
+def run_framework_tests():
+    dir_list = os.listdir('./')
+    for dir_entry in dir_list:
+        if os.path.isdir(dir_entry):
+            run_unit_tests(dir_entry)
 
-
-while os.path.exists(test_path('p2p-framework')) and os.path.isdir(test_path('p2p-framework')):
-    print(test_path('p2p-framework'))
-    cwd = os.getcwd()
-    os.chdir(test_path('p2p-framework'))
-    result=os.system(test_script())
-    
-    print(result)
-    os.chdir(cwd)
-    test_no+=1
-
-
+run_framework_tests()
