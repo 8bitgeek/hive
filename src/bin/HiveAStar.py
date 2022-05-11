@@ -61,7 +61,7 @@ class HiveAStar:
                     y_link=y+y_offs
                     if y_link>=0:
                         link = self.grid[x_link][y_link]
-                        if link.value != '%':
+                        if link.value == 0:
                             links.append(link)
         return links
     

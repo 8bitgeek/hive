@@ -39,25 +39,23 @@ from HiveAStar import HiveAStar
 # '.' is available
 # '%' is unavailable
 #
-grid = []
-grid.append(list('..%.%'))
-grid.append(list('.%.%.'))
-grid.append(list('.%.%.'))
-grid.append(list('%.%..'))
-grid.append(list('..%..'))
-
+grid = [
+            [0,0,1,0,1],
+            [0,1,0,1,0],
+            [0,1,0,1,0],
+            [1,0,1,0,0],
+            [0,0,1,0,0]
+        ]
+        
 astar=HiveAStar(grid)
 
-inputA='0 0'    # Origin (x,y)
-inputB='3 3'    # Destination (x,y)
+nodeA=[0,0]    # Origin (x,y)
+nodeB=[2,4]    # Destination (x,y)
 
-nodeA_x, nodeA_y = [ int(i) for i in inputA.split() ]
-nodeB_x, nodeB_y = [ int(i) for i in inputB.split() ]
-
-path=astar.solve((nodeA_x, nodeA_y),(nodeB_x, nodeB_y))
+path=astar.solve(nodeA,nodeB)
 
 # dump the path list coords
-print(len(path) - 1)
+
 for node in path:
     x, y = node.point
     print(x, y)
