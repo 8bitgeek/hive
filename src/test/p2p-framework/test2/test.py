@@ -59,3 +59,5 @@ path=astar.solve(nodeA,nodeB)
 for node in path:
     x, y = node.point
     print(x, y)
+
+sys.exit(255)
