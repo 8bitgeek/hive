@@ -36,25 +36,24 @@ sys.path.append("../../../bin")
 from HiveAStar import HiveAStar
 
 #
-# '.' is available
-# '%' is unavailable
+# '0' is available
+# '1' is unavailable
 #
-grid = [
+grid =  [
             [0,0,1,0,1],
             [0,1,0,1,0],
             [0,1,0,1,0],
             [1,0,1,0,0],
-            [0,0,1,0,0]
+            [0,0,1,0,0]   
         ]
-        
-astar=HiveAStar(grid)
 
+# x horizontal, y vertical#
+# nodeN[0] == x, nodeN[1] == y
 nodeA=[0,0]    # Origin (x,y)
 nodeB=[2,4]    # Destination (x,y)
 
+astar=HiveAStar(grid)
 path=astar.solve(nodeA,nodeB)
-
-# dump the path list coords
 
 for node in path:
     x, y = node.point

@@ -38,7 +38,7 @@ class AStarNode:
         self.G = 0
     
     def move_cost(self,other):
-        return 0 if self.value == '.' else 1
+        return 0 if self.value == 0 else 1
 
 
 class HiveAStar:
@@ -60,12 +60,13 @@ class HiveAStar:
                 for y_offs in range(-1,2):
                     y_link=y+y_offs
                     if y_link>=0:
-                        link = self.grid[x_link][y_link]
-                        if link.value == 0:
-                            links.append(link)
+                        if ( self.inrange([x_link,y_link]) ):
+                            link = self.grid[x_link][y_link]
+                            if link.value == 0:
+                                links.append(link)
         return links
     
-    def search(self,start, goal):
+    def search(self,start,goal):
         openset = set()
         closedset = set()
         current = start
@@ -112,12 +113,21 @@ class HiveAStar:
         # Return an empty set
         return []
 
+    # Is the node inside the range of the grid?
+    def inrange(self,node):
+        if ( len(self.grid) > node[1] ) :
+            if ( len(self.grid[node[1]]) > node[0] ):
+                return True
+        return False
+
     def solve(self,nodeA,nodeB):
         # Convert all the points to instances of HiveAStar
-        for x in range(len(self.grid)):
-            for y in range(len(self.grid[x])):
+        for y in range(len(self.grid)):
+            for x in range(len(self.grid[y])):
+                # print(x,y)
                 self.grid[x][y] = AStarNode(self.grid[x][y],(x,y))
         # Get the path
-        self.path=self.search(self.grid[nodeA[0]][nodeA[1]],self.grid[nodeB[0]][nodeB[1]])
+        if self.inrange(nodeA) and self.inrange(nodeB):
+            self.path=self.search(self.grid[nodeA[0]][nodeA[1]],self.grid[nodeB[0]][nodeB[1]])
         return self.path
 
