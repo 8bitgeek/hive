@@ -66,17 +66,15 @@ nodeB=[2,4]    # Destination (x,y)
 astar=HiveAStar(grid)
 path=astar.solve(nodeA,nodeB)
 
+# populate the input grid with the path result
 for node in path:
     y, x = node.point
     grid[y][x]=2
-    print(x, y)
 
-print(grid)
-print(result)
-
+# compare the computed path with the composite
+# result
 if ( grid == result ):
-    print("PASS")
     sys.exit(0)
-    
-print("FAIL")
+
+# result comparison failed
 sys.exit(255)
