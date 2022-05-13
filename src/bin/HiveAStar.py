@@ -27,6 +27,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 # IN THE SOFTWARE.
 #
+import copy
 
 class AStarNode:
     
@@ -43,29 +44,46 @@ class AStarNode:
 
 class HiveAStar:
     def __init__(self,grid):
-        self.grid = grid
+        self.grid = copy.deepcopy(grid)
         self.path = []
+
+    # Is the node inside the range of the grid?
+    def inrange(self,node):
+        if ( node[0] >= 0 and node[1] >= 0 ):
+            if ( len(self.grid) > node[1] ) :
+                if ( len(self.grid[node[1]]) > node[0] ):
+                    return True
+        return False
+
+    # calulate a manhattan distance between two points.
+    def manhattan_distance(self,point1, point2):
+        x1,y1 = point1.point
+        x2,y2 = point2.point
+        distance = abs(x1-x2) + abs(y1-y2)
+        return distance
 
     # default is simple manhattan line heuristic.
     # overload with a network derived heuristic value.
     def heuristic(self,point1,point2):
-        return abs(point1.point[0] - point2.point[0]) + abs(point1.point[1]-point2.point[0])
+        return self.manhattan_distance(point1,point2)
     
+    # look for a node's surrounding "children"
+    # being careful about exploring out of bounds
     def children(self,point):
         x,y = point.point
         links=[]
         for x_offs in range(-1,2):
-            x_link=(x+x_offs)
-            if x_link>=0:
-                for y_offs in range(-1,2):
-                    y_link=y+y_offs
-                    if y_link>=0:
-                        if ( self.inrange([x_link,y_link]) ):
-                            link = self.grid[x_link][y_link]
-                            if link.value == 0:
-                                links.append(link)
+            x_link = ( x + x_offs )
+            for y_offs in range(-1,2):
+                y_link = ( y + y_offs )
+                if ( self.inrange([x_link,y_link]) ):
+                    link = self.grid[x_link][y_link]
+                    if link.value == 0:
+                        links.append(link)
         return links
     
+    # the big kahuna; manage the open set and closed set.
+    # and returning the optimal path from start to goal.
     def search(self,start,goal):
         openset = set()
         closedset = set()
@@ -113,18 +131,10 @@ class HiveAStar:
         # Return an empty set
         return []
 
-    # Is the node inside the range of the grid?
-    def inrange(self,node):
-        if ( len(self.grid) > node[1] ) :
-            if ( len(self.grid[node[1]]) > node[0] ):
-                return True
-        return False
-
     def solve(self,nodeA,nodeB):
         # Convert all the points to instances of HiveAStar
         for y in range(len(self.grid)):
             for x in range(len(self.grid[y])):
-                # print(x,y)
                 self.grid[x][y] = AStarNode(self.grid[x][y],(x,y))
         # Get the path
         if self.inrange(nodeA) and self.inrange(nodeB):

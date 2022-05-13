@@ -29,6 +29,7 @@
 #
 import sys
 import time
+import copy
 
 # common imports location
 sys.path.append("../../../bin")
@@ -36,8 +37,9 @@ sys.path.append("../../../bin")
 from HiveAStar import HiveAStar
 
 #
-# '0' is available
-# '1' is unavailable
+# 0 is available path
+# 1 is unavailable
+# 2 is chosen path
 #
 grid =  [
             [0,0,1,0,1],
@@ -46,6 +48,15 @@ grid =  [
             [1,0,1,0,0],
             [0,0,1,0,0]   
         ]
+
+result =  [
+            [2,2,1,0,1],
+            [0,1,2,1,0],
+            [0,1,2,1,2],
+            [1,0,1,2,0],
+            [0,0,1,0,0]   
+        ]
+
 
 # x horizontal, y vertical#
 # nodeN[0] == x, nodeN[1] == y
@@ -56,7 +67,16 @@ astar=HiveAStar(grid)
 path=astar.solve(nodeA,nodeB)
 
 for node in path:
-    x, y = node.point
+    y, x = node.point
+    grid[y][x]=2
     print(x, y)
 
+print(grid)
+print(result)
+
+if ( grid == result ):
+    print("PASS")
+    sys.exit(0)
+    
+print("FAIL")
 sys.exit(255)
