@@ -43,7 +43,10 @@ def is_test_path(folder):
 def run_test(path):
     if ( is_test_path(path) ):
         status='PASS'
-        result=os.system(test_script_path(path))
+        cwd = os.getcwd()
+        os.chdir(path)
+        result=os.system('./test.py')
+        os.chdir(cwd)
         if result!=0:
             status='FAIL('+str(result)+')'
         print(status+' '+path)

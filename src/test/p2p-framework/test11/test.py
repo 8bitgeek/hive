@@ -42,6 +42,6 @@ data_encrypted = b"".join(cipher.encrypt_ecb_cts(data))
 data_decrypted = b"".join(cipher.decrypt_ecb_cts(data_encrypted))
 
 if ( data == data_decrypted ):
-    sys.exxit(0)
+    sys.exit(0)
 else:
     sys.exit(255)
