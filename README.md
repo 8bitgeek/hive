@@ -24,6 +24,8 @@ _  __  / _  / __ |/ //  __/
 * Summary of set up
   - `git clone https://github.com/8bitgeek/hive.git`
   - `cd hive`
+  - `git submodule init`
+  - `git submodule update`
 * Configuration
   - See [src/setup/README.md](src/setup/README.md)
 * Dependencies
