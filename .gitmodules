@@ -1,0 +1,3 @@
+[submodule "src/lib/opendht"]
+	path = src/lib/opendht
+	url = https://github.com/8bitgeek/opendht.git
