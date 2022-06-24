@@ -38,13 +38,14 @@ _  __  / _  / __ |/ //  __/
   - `cd hive`
   - `git submodule init`
   - `git submodule update`
-  - `cd src/lib/opendht`
-  - `sudo apt install libncurses5-dev libreadline-dev nettle-dev libgnutls28-dev libargon2-0-dev libmsgpack-dev  libssl-dev libfmt-dev libjsoncpp-dev libhttp-parser-dev libasio-dev`
-  - `sudo apt-get install cython3 python3-dev python3-setuptools`
-  - `mkdir build && cd build`
-  - `cmake -DOPENDHT_PYTHON=ON -DCMAKE_INSTALL_PREFIX=/usr ..`
-  - `make -j4`
-  - `sudo make install`
+    * OpenDHT
+      - `cd src/lib/opendht`
+      - `sudo apt install libncurses5-dev libreadline-dev nettle-dev libgnutls28-dev libargon2-0-dev libmsgpack-dev  libssl-dev libfmt-dev libjsoncpp-dev libhttp-parser-dev libasio-dev`
+      - `sudo apt-get install cython3 python3-dev python3-setuptools`
+      - `mkdir build && cd build`
+      - `cmake -DOPENDHT_PYTHON=ON -DCMAKE_INSTALL_PREFIX=/usr ..`
+      - `make -j4`
+      - `sudo make install`
 * Configuration
   - See [src/setup/README.md](src/setup/README.md)
 * Database configuration
