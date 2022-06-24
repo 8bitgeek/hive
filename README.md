@@ -30,6 +30,13 @@ _  __  / _  / __ |/ //  __/
   - See [src/setup/README.md](src/setup/README.md)
 * Dependencies
   - Python 3
+    - opendht
+      - msgpack-c 1.3+, used for data serialization.
+      - GnuTLS 3.3+, used for cryptographic operations.
+      - Nettle 2.4+, a GnuTLS dependency for crypto.
+      - Argon2, a dependency for key stretching.
+      - Readline, an optional dependency for the DHT tools.
+      - Cython, an optional dependency for the Python bindings.
     - p2pnetwork
     - ipfs-api
     - blowfish
