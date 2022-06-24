@@ -21,13 +21,6 @@ _  __  / _  / __ |/ //  __/
 
 ### How do I get set up?
 
-* Summary of set up
-  - `git clone https://github.com/8bitgeek/hive.git`
-  - `cd hive`
-  - `git submodule init`
-  - `git submodule update`
-* Configuration
-  - See [src/setup/README.md](src/setup/README.md)
 * Dependencies
   - Python 3
     - opendht
@@ -40,6 +33,20 @@ _  __  / _  / __ |/ //  __/
     - p2pnetwork
     - ipfs-api
     - blowfish
+* Summary of set up
+  - `git clone https://github.com/8bitgeek/hive.git`
+  - `cd hive`
+  - `git submodule init`
+  - `git submodule update`
+  - `cd src/lib/opendht`
+  - `sudo apt install libncurses5-dev libreadline-dev nettle-dev libgnutls28-dev libargon2-0-dev libmsgpack-dev  libssl-dev libfmt-dev libjsoncpp-dev libhttp-parser-dev libasio-dev`
+  - `sudo apt-get install cython3 python3-dev python3-setuptools`
+  - `mkdir build && cd build`
+  - `cmake -DOPENDHT_PYTHON=ON -DCMAKE_INSTALL_PREFIX=/usr ..`
+  - `make -j4`
+  - `sudo make install`
+* Configuration
+  - See [src/setup/README.md](src/setup/README.md)
 * Database configuration
 * How to run tests
   * See [src/test/README.md](src/test/README.md)
