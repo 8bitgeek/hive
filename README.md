@@ -12,7 +12,6 @@ _  __  / _  / __ |/ //  __/
 * Secure private communications and transactions
 * Robust social engagement, anti-censorship, open source
 * Version 0.0 (Work in Process)
-* Linux-only during early development phase
 
 ### Technology Preview
 
@@ -66,4 +65,3 @@ _  __  / _  / __ |/ //  __/
 
 * Repo owner or admin
 * Other community or team contact
-
